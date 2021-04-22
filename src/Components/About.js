@@ -16,7 +16,7 @@ export default class About extends Component{
 				<h1 className="text">About</h1>
 				<p>{this.state.id}</p>
 				<p>{this.state.name}</p>
-				<p>Welcome to our About Page</p>
+				<p>This is our About Page</p>
 
 			</>
 			);
