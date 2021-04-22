@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Context = React.createContext();
 
-const DadaProvider = Context.Provider;
-const PutiConsumer = Context.Consumer;
+var Context = React.createContext()
+var Provider = Context.Provider
+var Consumer = Context.Consumer
 
-export {DadaProvider,PutiConsumer};
+export {Provider, Consumer}

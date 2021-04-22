@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import {DadaProvider} from './Components/context';
-import Puti from './Components/Puti';
+import Functional from './Components/Functional';
+import {Provider} from './Components/context';
 function App() {
   return (
     <div className="App">
-    	<DadaProvider value="Message from Dada Provider">
-     		<Puti/>
-     	</DadaProvider>
+    	<Provider value="Message from Provider" name="Anwar">
+     		<Functional/>
+     	</Provider>
      </div>
   );
 }

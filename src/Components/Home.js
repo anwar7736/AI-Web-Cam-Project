@@ -1,40 +1,42 @@
 import React, {Component} from 'react';
+import {Button} from 'react-bootstrap';
 import axios from 'axios';
-import styles from './style.module.css';
-import Button from 'react-bootstrap/Button';
-export default class Home extends React.Component{
+export default class Home extends Component{
 	constructor(){
 		super()
 		this.state = {
-			lists : [],
+			name : [],
+			selected :'Bangladesh',
+
 		}
 	}
 	componentDidMount(){
 		axios.get('https://restcountries.eu/rest/v2/all')
 		.then(response=>{
-			this.setState({lists: response.data})
+			this.setState({name : response.data})
 		})
 		.catch(error=>{
-			alert('Something went wrong!');
+			alert('Something went wrong!')
 		})
 	}
-	login=()=>{
-		sessionStorage.setItem('login', true);
-	}	
-	logout=()=>{
-		sessionStorage.clear();
+	onChange=(e)=>{
+		this.setState({[e.target.name]: e.target.value})
 	}
+
 	render(){
-				if(sessionStorage.getItem('login')==null){
-					return (<Button onClick={this.login} className="btn-success">Login</Button>);
-				} 
-				else{
-					return (<Button onClick={this.logout} className="btn-danger">Logout</Button>);
-				}
-					
-					
-		
-			
-				
+		const data = this.state.name
+		const item = data.map((e)=>{
+			return <option>{e.name}</option>
+		})
+		return(
+			<>	<div class="col-md-3">
+				{this.state.selected}
+				<select name="selected" onChange={this.onChange} class="form-control" value={this.state.selected}>
+					{item}
+				</select>
+				</div>
+			</>
+			);
 	}
 }
+	

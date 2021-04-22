@@ -1,31 +1,24 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 import axios from 'axios';
-export default class About extends React.Component{
+export default class About extends Component{
 	constructor({match}){
 		super()
 		this.state = {
-			id : match.params.id,
+			id   : match.params.id,
 			name : match.params.name,
 		}
 	}
-
-	onChange=(e)=>{
-		this.setState({selected: e.target.value})
-	}
 	render(){
-				if(sessionStorage.getItem('login')==null){
-					return <Redirect to="/" />
-				} 
-				else{
-					return(
-				<>
-					<h3>About</h3>
-					<p>ID : {this.state.id}</p>
-					<p>Name : {this.state.name}</p>
-				</>
-				);
-				}
-		
+
+		return(
+			<>	
+				<h1 className="text">About</h1>
+				<p>{this.state.id}</p>
+				<p>{this.state.name}</p>
+
+			</>
+			);
 	}
 }
+	
