@@ -1,16 +1,9 @@
-import {React, useState, Fragment} from 'react';
-import {Consumer} from './context';
-export default function Functional(props){
+import {React, Fragment} from 'react';
+export default function Functional(){
 
 	return(
 			<Fragment>
-				<Consumer>
-					{
-						msg=>{
-							return msg;
-						}
-					}
-				</Consumer>
+				
 			</Fragment>
 
 		);

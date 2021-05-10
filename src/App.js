@@ -1,13 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Functional from './Components/Functional';
-import {Provider} from './Components/context';
+import Camera from './Components/Camera';
 function App() {
   return (
     <div className="App">
-    	<Provider value="Message from Provider" name="Anwar">
-     		<Functional/>
-     	</Provider>
+    	
+     		<Camera/>
+     
      </div>
   );
 }
